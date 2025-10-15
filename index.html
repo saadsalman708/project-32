@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="calcuBody">
+        <input id="display" type="text" placeholder="0" size="1" readonly></input>
+
+        <button onclick="clearDisplay()">C </button>
+        <button onclick="deleteLastChar()">Del</button>
+        <button onclick="Click(this.value)" value="/">%</button>
+        <button onclick="Click(this.value)" value="*">x</button>
+
+        <button onclick="Click(this.value)" value="7">7</button>
+        <button onclick="Click(this.value)" value="8">8</button>
+        <button onclick="Click(this.value)" value="9">9</button>
+        <button onclick="Click(this.value)" value="-">-</button>
+
+        <button onclick="Click(this.value)" value="4">4</button>
+        <button onclick="Click(this.value)" value="5">5</button>
+        <button onclick="Click(this.value)" value="6">6</button>
+        <button onclick="Click(this.value)" value="+">+</button>
+
+        <button onclick="Click(this.value)" value="1">1</button>
+        <button onclick="Click(this.value)" value="2">2</button>
+        <button onclick="Click(this.value)" value="3">3</button>
+
+        <!-- Equal sign Btn is here because in UI its span(taking) in 2 row's last box/grid -->
+        <button class="equal" onclick="equalBtn()">=</button>
+
+        <button class="zero" onclick="Click(this.value)" value="0">0</button>
+        <button onclick="Click(this.value)" value=".">.</button>
+    </div>
+
+
+
+
+
+    <!-- <div class="doggleDiv">
+        <button id="doggle">click</button>        
+    </div> -->
+
+</body>
+<script src="./app.js"></script>
+</html>
