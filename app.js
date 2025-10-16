@@ -1,11 +1,12 @@
 // getting id from HTML file
-var value = document.getElementById("display");
+var display = document.getElementById("display");
 
 // to get input/value from user
 // and stack them after another
 
 function Click(val) {
-    if (display.value == "Error") {
+    
+    if (display.value == "Error" || display.value == "0") {
         display.value = val;
     } else {
         display.value += val;
@@ -43,11 +44,11 @@ function equalBtn() {
 
     var errorConfirm = false;
 
+    
+    // to check if user gives symbol in start or last
+    
     var toCheckOnStart = "/*";
     var toCheckOnLast = "-+/*";
-
-
-    // to check if user gives symbol in start or last
 
     for (var i = 0; i < toCheckOnLast.length; i++) {
 
@@ -63,10 +64,22 @@ function equalBtn() {
     // to check if user gives more then 1 same or different symbol one after another
 
     var allSymbol = ".+-/*";
+    // var allSymbolExcludeMinus = ".+/*";   // just not now
     for (var i = 0; i < display.value.length; i++) {
 
-        if (display.value[i] == allSymbol[i]) {
-            display.value[i + 1] == allSymbol[i];
+        var firstSymbol = false;
+        var secondSymbol = false;
+        for (var j = 0; j < allSymbol.length; j++) {
+
+            if (display.value[i] == allSymbol[j]) {
+                firstSymbol = true;
+            }
+            if (display.value[i + 1] == allSymbol[j]) {
+                secondSymbol = true;
+            }
+        }
+        
+        if (firstSymbol && secondSymbol) {
             errorConfirm = true;
             break;
         }
@@ -78,7 +91,9 @@ function equalBtn() {
 
     // it to show Error on Calculator display
 
-    if (!errorConfirm) {
+    if (display.value.trim() === "") {
+        return;
+    } else if (!errorConfirm) {
         display.value = eval(display.value);
     } else {
         display.value = "Error";
