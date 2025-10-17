@@ -67,12 +67,8 @@ function equalBtn() {
     var toCheckOnStart = "/*";
     var toCheckOnLast = "-+/*";
 
-    for (var i = 0; i < toCheckOnLast.length; i++) {
-
-        if (toCheckOnStart.includes(text[i]) && toCheckOnLast.includes(text[text.length - 1])) {
-            errorConfirm = true;
-            break;
-        }
+    if (toCheckOnStart.includes(text[0]) || toCheckOnLast.includes(text[text.length - 1])) {
+        errorConfirm = true;
     }
 
 
@@ -96,7 +92,7 @@ function equalBtn() {
 
     // It Calculates value and gives Error on Calculator display
 
-    if (text.trim() === "") {
+    if (text === "") {
         return;
     } else if (!errorConfirm) {
         display.value = eval(display.value);
