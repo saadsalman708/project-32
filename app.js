@@ -69,7 +69,7 @@ function equalBtn() {
 
     for (var i = 0; i < toCheckOnLast.length; i++) {
 
-        if (toCheckOnStart.includes(text[i]) || toCheckOnLast.includes(text[text.length - 1])) {
+        if (toCheckOnStart.includes(text[i]) && toCheckOnLast.includes(text[text.length - 1])) {
             errorConfirm = true;
             break;
         }
@@ -99,7 +99,7 @@ function equalBtn() {
     if (text.trim() === "") {
         return;
     } else if (!errorConfirm) {
-        display.value = eval(text);
+        display.value = eval(display.value);
     } else {
         display.value = "Error";
     }
