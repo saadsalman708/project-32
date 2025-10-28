@@ -12,7 +12,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #000;
+    background: #1d1b1f;
+    /* background: #3c3c3c; */
     position: relative;
 }
 
@@ -28,6 +29,7 @@ body {
     height: 100%;
     z-index: -1;
     filter: blur(100px);
+    background-color: #000;
 }
 
 .inner-Gradi {
@@ -37,6 +39,7 @@ body {
     height: 100vh;
     overflow: hidden;
     transform: scale(.6);
+    background-color: #000;
 }
 
 /* animation for bottom div. */
@@ -54,7 +57,7 @@ body {
     position: absolute;
     width: 100vw;
     height: 100vh;
-    background: conic-gradient(from 0deg, red, orange, white, yellow, green, lime, blue, lightblue, purple, red);
+    background: conic-gradient(from 0deg, red, orange, white, yellow, green, lime, blue, lightblue, purple, pink, red);
     animation: spinIt 8s linear infinite;
 }
 
@@ -72,7 +75,6 @@ body {
     gap: 8px;
 
     background: rgba(255, 255, 255, .28);
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, .6), 0 16px 32px rgba(0, 0, 0, .12);
     backdrop-filter: url(#frosted);
     -webkit-backdrop-filter: url(#frosted);
 }
